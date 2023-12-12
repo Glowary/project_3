@@ -2,6 +2,8 @@
 
 
 About Our Real Estate Dashboard
+
+
 Welcome to our innovative Real Estate Dashboard, a powerful tool meticulously crafted to provide users with up-to-date insights into property prices across various cities and states in the United States. Our team has combined expertise in HTML, JavaScript, and database technologies to deliver a seamless and user-friendly experience for real estate enthusiasts, investors, and anyone curious about the dynamic landscape of property values.
 
 Technology Stack:
