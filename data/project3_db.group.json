@@ -1,0 +1,336 @@
+[{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da05d"
+  },
+  "StateName": "AL",
+  "Price": 229040.38461538462
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da05e"
+  },
+  "StateName": "AR",
+  "Price": 221737.57142857142
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da05f"
+  },
+  "StateName": "AZ",
+  "Price": 397297.5625
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da060"
+  },
+  "StateName": "CA",
+  "Price": 600618.828125
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da061"
+  },
+  "StateName": "CO",
+  "Price": 631629.1666666666
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da062"
+  },
+  "StateName": "CT",
+  "Price": 377185
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da063"
+  },
+  "StateName": "DE",
+  "Price": 393500
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da064"
+  },
+  "StateName": "FL",
+  "Price": 356511.95652173914
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da065"
+  },
+  "StateName": "GA",
+  "Price": 257952.44
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da066"
+  },
+  "StateName": "HI",
+  "Price": 686390.5
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da067"
+  },
+  "StateName": "IA",
+  "Price": 200972.22222222222
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da068"
+  },
+  "StateName": "ID",
+  "Price": 426079.125
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da069"
+  },
+  "StateName": "IL",
+  "Price": 148655.1052631579
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da06a"
+  },
+  "StateName": "IN",
+  "Price": 206837.0652173913
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da06b"
+  },
+  "StateName": "KS",
+  "Price": 240256.375
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da06c"
+  },
+  "StateName": "KY",
+  "Price": 231240
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da06d"
+  },
+  "StateName": "LA",
+  "Price": 213393.75
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da06e"
+  },
+  "StateName": "MA",
+  "Price": 477850
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da06f"
+  },
+  "StateName": "MD",
+  "Price": 306750
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da070"
+  },
+  "StateName": "ME",
+  "Price": 331800
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da071"
+  },
+  "StateName": "MI",
+  "Price": 218071
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da072"
+  },
+  "StateName": "MN",
+  "Price": 273148.3333333333
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da073"
+  },
+  "StateName": "MO",
+  "Price": 224791.96153846153
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da074"
+  },
+  "StateName": "MS",
+  "Price": 218393
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da075"
+  },
+  "StateName": "MT",
+  "Price": 448158.1
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da076"
+  },
+  "StateName": "NC",
+  "Price": 315919
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da077"
+  },
+  "StateName": "ND",
+  "Price": 271683.8333333333
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da078"
+  },
+  "StateName": "NE",
+  "Price": 254000
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da079"
+  },
+  "StateName": "NH",
+  "Price": 406216.625
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da07a"
+  },
+  "StateName": "NJ",
+  "Price": 365617.125
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da07b"
+  },
+  "StateName": "NM",
+  "Price": 350696.7
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da07c"
+  },
+  "StateName": "NV",
+  "Price": 458140
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da07d"
+  },
+  "StateName": "NY",
+  "Price": 231653
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da07e"
+  },
+  "StateName": "OH",
+  "Price": 173541.93548387097
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da07f"
+  },
+  "StateName": "OK",
+  "Price": 185083.33333333334
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da080"
+  },
+  "StateName": "OR",
+  "Price": 434103.75
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da081"
+  },
+  "StateName": "PA",
+  "Price": 211545.91304347827
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da082"
+  },
+  "StateName": "RI",
+  "Price": 430000
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da083"
+  },
+  "StateName": "SC",
+  "Price": 283204.5
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da084"
+  },
+  "StateName": "SD",
+  "Price": 199500
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da085"
+  },
+  "StateName": "TN",
+  "Price": 264041.13636363635
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da086"
+  },
+  "StateName": "TX",
+  "Price": 266002.3333333333
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da087"
+  },
+  "StateName": "UT",
+  "Price": 545445.75
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da088"
+  },
+  "StateName": "VA",
+  "Price": 308526.8181818182
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da089"
+  },
+  "StateName": "WA",
+  "Price": 456740.4411764706
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da08a"
+  },
+  "StateName": "WI",
+  "Price": 252122.5
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da08b"
+  },
+  "StateName": "WV",
+  "Price": 186208.33333333334
+},
+{
+  "_id": {
+    "$oid": "6577c78839ad95c4e12da08c"
+  },
+  "StateName": "WY",
+  "Price": 327756
+}]
