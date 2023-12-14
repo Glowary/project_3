@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from pymongo import MongoClient
 import pandas as pd
 
@@ -20,28 +20,32 @@ group_collection = db['GroupCollection']
 #################################################
 app = Flask(__name__)
 
-
 #################################################
 # Flask Routes
 #################################################
 @app.route("/")
 def home_price():
-    return (
-        f"Home Page<br/>"
-    )
+    return render_template('dashboard.html')
+
 
 @app.route("/updated-sale-price-data")
 def updated_sale_price_data():
 
     """Return the updated sale price data."""
+
+    # Retrieve the sale price data and convert from a Cursor object to JSON
     sale_price_data = list(sale_price_collection.find())
 
+    # Convert the list of JSON to a pandas DataFrame
     sale_price_df = pd.DataFrame(sale_price_data)
-
+    
+    # Drop the id column from MongoDB
     sale_price_df.drop('_id', axis=1, inplace=True)
 
+    # Reconvert the pandas DataFrame to a list of dictionaries (essentially in the structure of JSON)
     final_sale_price_data = sale_price_df.to_dict(orient='records')
 
+    # Return the JSON response for the given endpoint
     return jsonify(final_sale_price_data)
 
 @app.route("/group-data")
