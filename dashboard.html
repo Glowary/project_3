@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> UNITED STATE REAL ESTATE</title>
-    <!-- Include D3.js library and some more -->
+    <title>United States Real Estate Visualizations</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="path/to/nice-select.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
-    <!-- <script src="./static/js/app.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="path/to/jquery.js"></script> 
-<script src="path/to/jquery.nice-select.js"></script>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery Nice Select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+    <style>
+
+      .center-text {
+          text-align: center;
+      }
+
+    </style>
+
 </head>
 <body>
     <div class="container">
         <div class="row">
-          <div class="col-md-12 jumbotron text-center">
-            <h1>UNITED STATE REAL ESTATE </h1>
-            <p>Use the interactive charts below to explore the dataset</p>
+          <div class="center-text">
+            <h1>United States Real Estate Visualizations</h1>
+            <p>Use the interactive charts below to explore the dataset. The dropdown menu can be used to filter data based on state.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-2">
 <!-- Dropdown to be populated dynamically -->
+<div class="center-text">
 <select id="dropdown"></select>
+</div>
 <div id="map" style="height: 400px;"></div>
 <div id="plot"></div>
 <div id="new"></div>
@@ -47,15 +60,12 @@ function populateDropdown(csvData) {
         .enter().append("option")
         .text(function(d) { return d; })
         .attr("value", function(d) { return d; });
-    $(document).ready(function() {
-      $('#dropdown').niceSelect();
-    });   
 }
 
 // // Add a tile layer to the map (you can use a different tile layer if needed)
 function buildleafletmap(dropdownName){
 
-  // Load the CSV file and populate the dropdown
+    // Load the CSV file and populate the dropdown
   d3.json('http://localhost:8003/updated-sale-price-data').then(function(data) {
       // Extract a single column from the CSV data (change "ColumnName" to the desired column)
       var csvColumn = data.map(function(d) {
@@ -64,35 +74,34 @@ function buildleafletmap(dropdownName){
       // Call the function to populate the dropdown
       populateDropdown(csvColumn);
   });
-  // // Initialize the map
-  
+    // // Initialize the map
+    
   var map = L.map('map').setView([0, 0], 2);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-// // Load CSV data and add markers to the map
-d3.json('http://localhost:8003/updated-sale-price-data').then(function(data) {
-  console.log(data);
-//     // Loop through the CSV data and add markers to the map
-    data.reverse().forEach(function(d) {
-        var StateName = d. State;
-        console.log(d.StateName);
-        console.log(dropdownName);
-        if (dropdownName == d.StateName || dropdownName == 'US') {
-          var lat = (parseFloat(d.Latitude));
-          var lon = parseFloat(d.Longitude);
+  }).addTo(map);
 
-  //     //     // Check if latitude and longitude are valid numbers
-          if (!isNaN(lat) && !isNaN(lon)) {
-            L.marker([lat, lon]).addTo(map)
-                  .bindPopup('State: ' + d.StateName  +'<br>City:' + d.RegionName + '<br> City average 2008-2023:' + d.Average );
-                  
+  // // Load CSV data and add markers to the map
+  d3.json('http://localhost:8003/updated-sale-price-data').then(function(data) {
+
+  //     // Loop through the CSV data and add markers to the map
+      data.reverse().forEach(function(d) {
+          var StateName = d. State;
+          if (dropdownName == d.StateName || dropdownName == 'US') {
+            var lat = (parseFloat(d.Latitude));
+            var lon = parseFloat(d.Longitude);
+
+    //     //     // Check if latitude and longitude are valid numbers
+            if (!isNaN(lat) && !isNaN(lon)) {
+              L.marker([lat, lon]).addTo(map)
+                    .bindPopup('State: ' + d.StateName  +'<br>City:' + d.RegionName + '<br> City average 2008-2023:' + d.Average );
+                    
+            }
           }
-        }
-    });
-});
-console.log(map);
-return map;
+      });
+  });
+
+  return map;
 }
 
 
@@ -100,94 +109,89 @@ return map;
 function buildbarchartcity(){
   d3.json('http://localhost:8003/updated-sale-price-data').then(function(data) {
 
-var svgBarChart = d3.select("#bar-chart").append("svg");
-let name = 'US CITIES'
+  var svgBarChart = d3.select("#bar-chart").append("svg");
+  let name = 'US CITIES'
 
-let title = `${name}'s HOME PRICE CHART`
-var plotAvg = data.map(function(d) {
-       return d.Average;
-   });
-   
-var plotRegion = data.map(function(d) {
-       return d.RegionName;
-   });
-let trace1 = {
- x: plotRegion, 
- y: plotAvg, 
- type: 'bar'
-};
+  let title = `${name}'s HOME PRICE CHART`
+  var plotAvg = data.map(function(d) {
+    return d.Average;
+  });
+    
+  var plotRegion = data.map(function(d) {
+    return d.RegionName;
+  });
+  let trace1 = {
+  x: plotRegion, 
+  y: plotAvg, 
+  type: 'bar'
+  };
 
-let plotTrace = [trace1];
+  let plotTrace = [trace1];
 
-let layout = {
- title: title
-}
-Plotly.newPlot("plot", plotTrace, layout);
-});
+  let layout = {
+  title: title
+  }
+  Plotly.newPlot("plot", plotTrace, layout);
+  });
 
 }
 
 // Initialize bar chart#2
 function buildbarchartstate(){
   d3.json('http://localhost:8003/group-data').then(function(data) {
-console.log(data);
-let name = 'US STATE'
-let title = `${name}'s HOME PRICE CHART`
 
-var plotState = data.map(function(d) {
-        return d.StateName;
-    });
-    
- var plotPrice = data.map(function(d) {
-        return d.Price;
-    });
-let trace1 = {
-  x: plotState, 
-  y: plotPrice, 
-  type: 'bar'
-};
+  let name = 'US STATE'
+  let title = `${name}'s HOME PRICE CHART`
 
-let plotTrace = [trace1];
+  var plotState = data.map(function(d) {
+          return d.StateName;
+      });
+      
+  var plotPrice = data.map(function(d) {
+          return d.Price;
+      });
+  let trace1 = {
+    x: plotState, 
+    y: plotPrice, 
+    type: 'bar'
+  };
 
-let layout = {
-  title: title
-}
-Plotly.newPlot("new", plotTrace, layout);
+  let plotTrace = [trace1];
+
+  let layout = {
+    title: title
+  }
+  Plotly.newPlot("new", plotTrace, layout);
 });
 }
 
-
-
 function init(){
- map = buildleafletmap('US');
-console.log(map);
-buildbarchartcity();
-buildbarchartstate();
+  map = buildleafletmap('US');
+  buildbarchartcity();
+  buildbarchartstate();
 }
-function optionChanged(){
 
-}
 init();
 
 var dropdown = d3.select("#dropdown");
 // dropdown.on('change',console.log('something'))
 // d3.select(“#selData”).on(“change”, console.log(event.target);
 function handleClick(event) {
-  console.log(map);
+
   map = map.remove();
-  console.log("A button was clicked!");
-  // console.log(event.target.property('value'));
+
   let dropdownMenu = d3.select(this);
-  console.log(dropdownMenu);
-  // Assign the value of the dropdown menu option to a variable
+
   let dataset = dropdownMenu.property("value");
-  console.log(dataset)
+
   map = buildleafletmap(dataset)
 }
+
 dropdown.on("change", handleClick);
-// console.log(dropdown)
 
-
+$(document).ready(function() {
+  $('#dropdown').niceSelect();
+});  
 
 </script>
 
